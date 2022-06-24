@@ -13,11 +13,17 @@ namespace MyBankApp
 
             string? Owner = Console.ReadLine();
 
+            // If ownner is null default value witll be User.
+            Owner = null ?? "User";
             Console.WriteLine("Please input initial balance to open account.");
 
             // Getting input and converting to decimal.
-            decimal InitialBalance = Convert.ToDecimal(Console.ReadLine());
 
+            string? number = Console.ReadLine();
+
+            number = null ?? "0";
+
+            decimal InitialBalance = Convert.ToDecimal(number);
 
             // Passing parameter to another class.
             var account = new SuperBankAccount(Owner, InitialBalance);
